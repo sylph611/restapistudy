@@ -13,6 +13,7 @@ public class EventTest {
                 .description("description")
                 .build();
         assertThat(event).isNotNull();
+
     }
 
     @Test
