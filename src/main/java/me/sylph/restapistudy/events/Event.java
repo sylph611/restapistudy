@@ -1,5 +1,9 @@
 package me.sylph.restapistudy.events;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.Id;
 import lombok.*;
 
 import java.time.LocalDateTime;
@@ -10,8 +14,10 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @EqualsAndHashCode(of = "id")
+@Entity
 public class Event {
 
+    @Id @Generated
     private Integer id;
     private String name;
     private String description;
@@ -25,6 +31,8 @@ public class Event {
     private int limitOfEnrollment;
     private boolean offline;
     private boolean free;
+
+    @Enumerated(EnumType.STRING)
     private EventStatus eventStatus;
 
 }
